@@ -12,10 +12,19 @@ test {
 }
 
 dependencies {
+
     compile group: 'com.google.guava', name: 'guava', version: '14.0.1'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
     compile group: 'commons-io', name: 'commons-io', version: '2.4'
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
+
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.0.13'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
+
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.0.4.v20130625'
+    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version: '9.0.4.v20130625'
+
     testCompile group: 'org.testng', name: 'testng', version: '6.1.1'
     testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.5'
 }

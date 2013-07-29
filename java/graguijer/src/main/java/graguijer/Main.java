@@ -17,6 +17,6 @@ public class Main {
         server.setHandler(webAppContext);
         server.start();
         server.join();
-        System.out.println("asd");
+
     }
 }

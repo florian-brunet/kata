@@ -5,6 +5,10 @@
            http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
            version="2.5">
 
+    <listener>
+        <listener-class>graguijer.GuiceServletConfigListener</listener-class>
+    </listener>
+
     <filter>
         <filter-name>guiceFilter</filter-name>
         <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>

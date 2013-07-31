@@ -11,6 +11,11 @@ test {
     useTestNG()
 }
 
+logbackVersion = '1.0.13'
+jettyVersion = '9.0.4.v20130625'
+jerseyVersion = '1.17.1'
+guiceVersion = '3.0'
+
 dependencies {
 
     compile group: 'com.google.guava', name: 'guava', version: '14.0.1'
@@ -19,20 +24,22 @@ dependencies {
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
 
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
-    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.0.13'
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: "$logbackVersion"
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: "$logbackVersion"
 
-    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.0.4.v20130625'
-    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version: '9.0.4.v20130625'
-    compile group: 'org.eclipse.jetty', name: 'jetty-jsp', version: '9.0.4.v20130625'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: "$jettyVersion"
+    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version: "$jettyVersion"
+    compile group: 'org.eclipse.jetty', name: 'jetty-jsp', version: "$jettyVersion"
 
-    compile group: 'com.google.inject', name: 'guice', version: '3.0'
-    compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: '3.0'
-    compile group: 'com.sun.jersey.contribs', name: 'jersey-guice', version: '1.17.1'
+    compile group: 'com.google.inject', name: 'guice', version: "$guiceVersion"
+    compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: "$guiceVersion"
+    compile group: 'com.sun.jersey.contribs', name: 'jersey-guice', version: "$jerseyVersion"
 
-    compile group: 'com.sun.jersey', name: 'jersey-core', version: '1.17.1'
-    compile group: 'com.sun.jersey', name: 'jersey-server', version: '1.17.1'
-    compile group: 'com.sun.jersey', name: 'jersey-servlet', version: '1.17.1'
+    compile group: 'com.sun.jersey', name: 'jersey-core', version: "$jerseyVersion"
+    compile group: 'com.sun.jersey', name: 'jersey-server', version: "$jerseyVersion"
+    compile group: 'com.sun.jersey', name: 'jersey-servlet', version: "$jerseyVersion"
+
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.20'
 
     testCompile group: 'org.testng', name: 'testng', version: '6.1.1'
     testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.5'

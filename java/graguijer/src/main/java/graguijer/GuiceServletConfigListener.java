@@ -12,9 +12,9 @@ public class GuiceServletConfigListener extends GuiceServletContextListener {
         return Guice.createInjector(new ServletModule() {
             @Override
             protected void configureServlets() {
-//                serveRegex("/(images|css|jsp)/.*").with(DefaultWrapperServlet.class);
                 bind(FreemarkerProvider.class);
                 bind(MainController.class);
+                serveRegex("/(js|css)/.*").with(StaticContentForwardingServlet.class);
                 serve("/*").with(GuiceContainer.class);
             }
         });

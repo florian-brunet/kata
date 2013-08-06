@@ -13,11 +13,9 @@ import javax.ws.rs.core.Response;
 @Path("/")
 @Singleton
 public class MainController {
-
     @GET
     @Produces(MediaType.TEXT_HTML)
-    public Viewable login() {
-        return new Viewable("login");
+    public Viewable index() {
+        return new Viewable("index");
     }
-
 }

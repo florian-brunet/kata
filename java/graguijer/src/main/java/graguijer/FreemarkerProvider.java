@@ -4,7 +4,6 @@ package graguijer;
 import com.google.inject.Singleton;
 import com.sun.jersey.api.view.Viewable;
 import com.sun.jersey.spi.template.ViewProcessor;
-import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.cache.TemplateLoader;
 import freemarker.template.Configuration;
@@ -25,7 +24,6 @@ public class FreemarkerProvider implements ViewProcessor<Template> {
 
     public FreemarkerProvider() throws IOException {
         File file = new File("web/ftl");
-        System.out.println(file.getAbsolutePath());
         TemplateLoader templateLoader = new FileTemplateLoader(file);
         configuration = new Configuration();
         configuration.setTemplateLoader(templateLoader);

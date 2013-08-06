@@ -1,8 +1,8 @@
 <html>
     <head>
-        <title></title>
+        <title>GraGuiJer</title>
     </head>
     <body>
-        hi from freemarker
+
     </body>
 </html>

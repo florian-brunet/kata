@@ -5,9 +5,6 @@ mainClassName = "graguijer.Main"
 
 repositories {
     mavenCentral()
-    mavenRepo (name: "JQuery", url: "http://code.jquery.com") {
-        pattern = "[module]-[revision](.[classifier]).[ext]"
-    }
 }
 
 test {
@@ -18,15 +15,6 @@ ext.logbackVersion = '1.0.13'
 ext.jettyVersion = '9.0.4.v20130625'
 ext.jerseyVersion = '1.17.1'
 ext.guiceVersion = '3.0'
-
-configurations {
-    js
-}
-
-task fetchJs(type: Copy) {
-    from configurations.js
-    into "web/js"
-}
 
 dependencies {
 
@@ -55,7 +43,5 @@ dependencies {
 
     testCompile group: 'org.testng', name: 'testng', version: '6.1.1'
     testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.5'
-
-    js group: 'jquery', name: 'jquery', version: '1.10.2', classifier: 'min', ext: "js"
 
 }

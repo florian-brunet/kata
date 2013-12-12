@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://camel.apache.org/schema/spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <proxy id="dataProductionCamelRouteProxy" serviceInterface="camel.example2.CamelProxy"
+           serviceUrl="direct:start"/>
+
+
+    <beans:bean id="processor" class="camel.example2.ExampleProcessor" />
+
+    <camelContext>
+        <route>
+            <from uri="direct:start"/>
+            <bean ref="processor" method="process(${body['param1']},${body['param2']})"/>
+        </route>
+    </camelContext>
+
+
+</beans:beans>

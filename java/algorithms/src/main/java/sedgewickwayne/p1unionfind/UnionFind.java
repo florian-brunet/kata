@@ -1,4 +1,4 @@
-package lectures.p1unionfind;
+package sedgewickwayne.p1unionfind;
 
 public interface UnionFind {
 

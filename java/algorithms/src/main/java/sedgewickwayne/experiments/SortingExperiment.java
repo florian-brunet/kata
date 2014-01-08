@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sedgewickwayne.p3sorting.InsertionSort;
 import sedgewickwayne.p3sorting.SelectionSort;
+import sedgewickwayne.p3sorting.ShellSort;
 
 import java.io.FileWriter;
 import java.util.Map;
@@ -83,6 +84,12 @@ public class SortingExperiment {
             @Override
             public void sort(Comparable[] a) {
                 InsertionSort.sort(a);
+            }
+        });
+        sortingAlgorithms.put("ShellSort", new SortingAlgorithm() {
+            @Override
+            public void sort(Comparable[] a) {
+                ShellSort.sort(a);
             }
         });
         return sortingAlgorithms;

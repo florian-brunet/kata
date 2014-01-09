@@ -13,7 +13,7 @@ public class SortingTest {
 
     @Before
     public void setUp() throws Exception {
-        a = new Integer[]{5, 9, 6 ,8, 2, 3};
+        a = new Integer[]{5, 9, 6, 1 ,8, 2, 3, 12, 3, 2, 6, 8, 5, 4, 0, 2};
     }
 
     @Test
@@ -31,6 +31,18 @@ public class SortingTest {
     @Test
     public void testShellSort() throws Exception {
         ShellSort.sort(a);
+        assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
+    }
+
+    @Test
+    public void testMergeSort() throws Exception {
+        MergeSort.sort(a);
+        assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
+    }
+
+    @Test
+    public void testBottomUpMergeSort() throws Exception {
+        BottomUpMergeSort.sort(a);
         assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
     }
 

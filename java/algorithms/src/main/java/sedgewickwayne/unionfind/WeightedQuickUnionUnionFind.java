@@ -1,11 +1,11 @@
-package sedgewickwayne.p1unionfind;
+package sedgewickwayne.unionfind;
 
-public class WeightedQuickUnionUnionFindPathCompression implements UnionFind {
+public class WeightedQuickUnionUnionFind implements UnionFind {
 
     private int[] id;
     private int[] sz;
 
-    public WeightedQuickUnionUnionFindPathCompression(int N) {
+    public WeightedQuickUnionUnionFind(int N) {
         id = new int[N];
         sz = new int[N];
         for (int i = 0; i < N; i++) {
@@ -34,7 +34,6 @@ public class WeightedQuickUnionUnionFindPathCompression implements UnionFind {
 
     private int root (int i) {
         while (i != id[i]) {
-            id[i] = id[id[i]];
             i = id[i];
         }
         return i;

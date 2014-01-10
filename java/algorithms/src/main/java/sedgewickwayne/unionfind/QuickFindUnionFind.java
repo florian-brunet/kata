@@ -1,4 +1,4 @@
-package sedgewickwayne.p1unionfind;
+package sedgewickwayne.unionfind;
 
 public class QuickFindUnionFind implements UnionFind {
 

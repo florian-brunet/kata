@@ -1,4 +1,4 @@
-package sedgewickwayne.p3sorting;
+package sedgewickwayne.sorting;
 
 import org.junit.Before;
 import org.junit.Test;

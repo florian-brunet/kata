@@ -3,14 +3,14 @@ package sedgewickwayne.experiments;
 import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sedgewickwayne.p3sorting.InsertionSort;
-import sedgewickwayne.p3sorting.SelectionSort;
-import sedgewickwayne.p3sorting.ShellSort;
+import sedgewickwayne.sorting.InsertionSort;
+import sedgewickwayne.sorting.SelectionSort;
+import sedgewickwayne.sorting.ShellSort;
 
 import java.io.FileWriter;
 import java.util.Map;
 
-import static sedgewickwayne.p3sorting.SortingUtils.shuffle;
+import static sedgewickwayne.sorting.SortingUtils.shuffle;
 
 public class SortingExperiment {
 

@@ -1,4 +1,4 @@
-package sedgewickwayne.p1unionfind;
+package sedgewickwayne.unionfind;
 
 import com.google.common.collect.Lists;
 import org.junit.Before;

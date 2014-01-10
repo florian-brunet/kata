@@ -1,4 +1,4 @@
-package sedgewickwayne.p3sorting;
+package sedgewickwayne.sorting;
 
 import sedgewickwayne.utils.StdRandom;
 

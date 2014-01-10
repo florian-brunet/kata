@@ -1,13 +1,16 @@
-package sedgewickwayne.p1unionfind;
+package sedgewickwayne.unionfind;
 
-public class QuickUnionUnionFind implements UnionFind {
+public class WeightedQuickUnionUnionFindPathCompression implements UnionFind {
 
     private int[] id;
+    private int[] sz;
 
-    public QuickUnionUnionFind(int N) {
+    public WeightedQuickUnionUnionFindPathCompression(int N) {
         id = new int[N];
+        sz = new int[N];
         for (int i = 0; i < N; i++) {
             id[i] = i;
+            sz[i] = 1;
         }
     }
 
@@ -15,7 +18,13 @@ public class QuickUnionUnionFind implements UnionFind {
     public void union(int p, int q) {
         int i = root(p);
         int j = root(q);
-        id[i] = j;
+        if (sz[i] < sz[j]) {
+            id[i] = j;
+            sz[j] += sz[i];
+        } else {
+            id[j] = i;
+            sz[i] += sz[j];
+        }
     }
 
     @Override
@@ -25,6 +34,7 @@ public class QuickUnionUnionFind implements UnionFind {
 
     private int root (int i) {
         while (i != id[i]) {
+            id[i] = id[id[i]];
             i = id[i];
         }
         return i;

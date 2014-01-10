@@ -1,7 +1,7 @@
-package sedgewickwayne.p3sorting;
+package sedgewickwayne.sorting;
 
-import static sedgewickwayne.p3sorting.SortingUtils.less;
-import static sedgewickwayne.p3sorting.SortingUtils.merge;
+import static sedgewickwayne.sorting.SortingUtils.less;
+import static sedgewickwayne.sorting.SortingUtils.merge;
 
 public class MergeSort {
 

@@ -1,7 +1,5 @@
 package sedgewickwayne.stacks;
 
-import static sedgewickwayne.utils.ArrayUtils.resize;
-
 public class ArrayStack<Item> implements Stack<Item> {
 
     static final int MINIMUM_ARRAY_SIZE = 16;
@@ -18,10 +16,17 @@ public class ArrayStack<Item> implements Stack<Item> {
         items = (Item[]) new Object[MINIMUM_ARRAY_SIZE];
     }
 
+    @SuppressWarnings("unchecked")
+    private void resize(int newSize) {
+        Item[] newItems = (Item[]) new Object[newSize];
+        System.arraycopy(items, 0, newItems, 0, size);
+        items = newItems;
+    }
+
     @Override
     public void push(Item item) {
         if (size == items.length) {
-            items = resize(items, items.length * 2, size);
+            resize(items.length * 2);
         }
         items[size++] = item;
     }
@@ -31,7 +36,7 @@ public class ArrayStack<Item> implements Stack<Item> {
         Item item = items[--size];
         items[size] = null;
         if (size <= items.length / 4 && items.length > MINIMUM_ARRAY_SIZE) {
-            items = resize(items, items.length / 2, size);
+            resize(items.length / 2);
         }
         return item;
     }

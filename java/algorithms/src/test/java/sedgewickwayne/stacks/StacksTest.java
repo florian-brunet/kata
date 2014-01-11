@@ -10,10 +10,11 @@ import static org.junit.Assert.*;
 
 public class StacksTest {
 
-    List<Stack<Integer>> stacks = Lists.newArrayList();
+    List<Stack<Integer>> stacks;
 
     @Before
     public void setUp() throws Exception {
+        stacks = Lists.newArrayList();
         stacks.add(LinkedStack.<Integer>newLinkedStack());
         stacks.add(ArrayStack.<Integer>newArrayStack());
     }

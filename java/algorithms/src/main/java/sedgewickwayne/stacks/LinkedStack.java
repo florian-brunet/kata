@@ -1,9 +1,9 @@
-package sedgewickwayne.queues;
+package sedgewickwayne.stacks;
 
-public class LinkedQueue<Item> implements Queue<Item> {
+public class LinkedStack<Item> implements Stack<Item> {
 
-    public static <T> LinkedQueue<T> newLinkedQueue() {
-        return new LinkedQueue<T>();
+    public static <T> LinkedStack<T> newLinkedStack() {
+        return new LinkedStack<T>();
     }
 
     class Node {
@@ -12,27 +12,19 @@ public class LinkedQueue<Item> implements Queue<Item> {
     }
 
     Node first;
-    Node last;
 
     @Override
-    public void enqueue(Item item) {
+    public void push(Item item) {
         Node node = new Node();
         node.item = item;
-        if (last != null) {
-            last.next = node;
-        } else {
-            first = node;
-        }
-        last = node;
+        node.next = first;
+        first = node;
     }
 
     @Override
-    public Item dequeue() {
+    public Item pop() {
         Item item = first.item;
         first = first.next;
-        if (first == null) {
-            last = null;
-        }
         return item;
     }
 
@@ -51,4 +43,5 @@ public class LinkedQueue<Item> implements Queue<Item> {
         }
         return size;
     }
+
 }

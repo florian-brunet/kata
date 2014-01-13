@@ -54,4 +54,10 @@ public class SortingTest {
         assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
     }
 
+    @Test
+    public void testHeapSort() throws Exception {
+        HeapSort.sort(a);
+        assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
+    }
+
 }

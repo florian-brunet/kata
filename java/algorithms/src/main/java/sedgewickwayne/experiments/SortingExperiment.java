@@ -3,9 +3,7 @@ package sedgewickwayne.experiments;
 import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sedgewickwayne.sorting.InsertionSort;
-import sedgewickwayne.sorting.SelectionSort;
-import sedgewickwayne.sorting.ShellSort;
+import sedgewickwayne.sorting.*;
 
 import java.io.FileWriter;
 import java.util.Map;
@@ -90,6 +88,24 @@ public class SortingExperiment {
             @Override
             public void sort(Comparable[] a) {
                 ShellSort.sort(a);
+            }
+        });
+        sortingAlgorithms.put("MergeSort", new SortingAlgorithm() {
+            @Override
+            public void sort(Comparable[] a) {
+                MergeSort.sort(a);
+            }
+        });
+        sortingAlgorithms.put("BottomUpMergeSort", new SortingAlgorithm() {
+            @Override
+            public void sort(Comparable[] a) {
+                BottomUpMergeSort.sort(a);
+            }
+        });
+        sortingAlgorithms.put("QuickSort", new SortingAlgorithm() {
+            @Override
+            public void sort(Comparable[] a) {
+                QuickSort.sort(a);
             }
         });
         return sortingAlgorithms;

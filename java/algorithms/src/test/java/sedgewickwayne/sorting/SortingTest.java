@@ -1,9 +1,11 @@
 package sedgewickwayne.sorting;
 
+import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -43,6 +45,12 @@ public class SortingTest {
     @Test
     public void testBottomUpMergeSort() throws Exception {
         BottomUpMergeSort.sort(a);
+        assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
+    }
+
+    @Test
+    public void testQuickSort() throws Exception {
+        QuickSort.sort(a);
         assertTrue("Unsorted array: "+ Arrays.asList(a),SortingUtils.isSorted(a));
     }
 

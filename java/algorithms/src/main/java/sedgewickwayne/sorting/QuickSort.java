@@ -1,8 +1,6 @@
 package sedgewickwayne.sorting;
 
-import static sedgewickwayne.sorting.SortingUtils.exchange;
-import static sedgewickwayne.sorting.SortingUtils.less;
-import static sedgewickwayne.sorting.SortingUtils.shuffle;
+import static sedgewickwayne.sorting.SortingUtils.*;
 
 public class QuickSort {
 

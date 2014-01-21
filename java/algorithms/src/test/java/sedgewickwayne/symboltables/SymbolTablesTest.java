@@ -22,6 +22,7 @@ public class SymbolTablesTest {
         symbolTables = Lists.newArrayList();
         symbolTables.add(UnorderedListTable.<Integer, Integer>newUnorderedListTable());
         symbolTables.add(OrderedArrayTable.<Integer, Integer>newOrderedArrayTable());
+        symbolTables.add(HashTable.<Integer, Integer>newHashTable());
     }
 
     @Test
@@ -34,7 +35,9 @@ public class SymbolTablesTest {
             for (int k = 0; k<100; k++) {
 
                 LOGGER.debug("Inserting key = " + k);
+                assertFalse(name + ".contains does not work", symbolTable.contains(k));
                 symbolTable.put(k, k);
+                assertTrue(name + ".contains does not work", symbolTable.contains(k));
 
                 symbolTable.put(100, 10);
                 assertFalse(name + ".isEmpty does not work", symbolTable.isEmpty());

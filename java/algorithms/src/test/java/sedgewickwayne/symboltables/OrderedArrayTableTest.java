@@ -1,7 +1,6 @@
 package sedgewickwayne.symboltables;
 
 import com.google.common.collect.Lists;
-import org.apache.commons.lang3.Range;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,7 +1,5 @@
 package sedgewickwayne.symboltables;
 
-import java.util.Arrays;
-
 public class OrderedArrayTable<Key extends Comparable<Key>, Value> implements SymbolTable<Key,Value> {
 
     static final int MINIMUM_ARRAY_SIZE = 16;

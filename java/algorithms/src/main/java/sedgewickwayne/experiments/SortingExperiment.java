@@ -3,18 +3,18 @@ package sedgewickwayne.experiments;
 import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sedgewickwayne.sorting.*;
+import sedgewickwayne.lectures.sorting.*;
 
 import java.io.FileWriter;
 import java.util.Map;
 
-import static sedgewickwayne.sorting.SortingUtils.shuffle;
+import static sedgewickwayne.lectures.sorting.SortingUtils.shuffle;
 
 public class SortingExperiment {
 
     private static final int MINIMUM_ARRAY_SIZE = 32;
-    private static final int MAXIMUM_ARRAY_SIZE = 1 << 10;
-    private static final int STATISTIC_SIZE = 300;
+    private static final int MAXIMUM_ARRAY_SIZE = 1 << 13;
+    private static final int STATISTIC_SIZE = 1000;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SortingExperiment.class);
 
@@ -27,7 +27,7 @@ public class SortingExperiment {
         Map<String, SortingAlgorithm> sortingAlgorithms = initializeSortingAlgorithms();
         Map<String, FileWriter> dataWriters = Maps.newHashMap();
         for (String algorithmName : sortingAlgorithms.keySet()) {
-            dataWriters.put(algorithmName, new FileWriter(algorithmName+".dat"));
+            dataWriters.put(algorithmName, new FileWriter("experimentData/"+algorithmName+".dat"));
         }
         int N = MINIMUM_ARRAY_SIZE;
         while (N <= MAXIMUM_ARRAY_SIZE) {
@@ -106,6 +106,12 @@ public class SortingExperiment {
             @Override
             public void sort(Comparable[] a) {
                 QuickSort.sort(a);
+            }
+        });
+        sortingAlgorithms.put("HeapSort", new SortingAlgorithm() {
+            @Override
+            public void sort(Comparable[] a) {
+                HeapSort.sort(a);
             }
         });
         return sortingAlgorithms;

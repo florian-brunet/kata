@@ -1,6 +1,7 @@
 package sedgewickwayne.lectures.sorting;
 
 import static sedgewickwayne.lectures.sorting.SortingUtils.exchange;
+import static sedgewickwayne.lectures.sorting.SortingUtils.isSorted;
 import static sedgewickwayne.lectures.sorting.SortingUtils.less;
 
 public class SelectionSort {
@@ -15,6 +16,7 @@ public class SelectionSort {
             }
             exchange(a, i, min);
         }
+        assert isSorted(a);
     }
 
 }

@@ -1,5 +1,6 @@
 package sedgewickwayne.lectures.sorting;
 
+import static sedgewickwayne.lectures.sorting.SortingUtils.isSorted;
 import static sedgewickwayne.lectures.sorting.SortingUtils.merge;
 
 public class BottomUpMergeSort {
@@ -12,6 +13,7 @@ public class BottomUpMergeSort {
                 merge(a, aux, lo, lo+size-1, Math.min(lo+size+size-1, N-1));
             }
         }
+        assert isSorted(a);
     }
 
 }

@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sedgewickwayne.lectures.sorting.SortingUtils;
+import sedgewickwayne.lectures.trees.BinarySearchTree;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class SymbolTablesTest {
         symbolTables.add(UnorderedListTable.<Integer, Integer>newUnorderedListTable());
         symbolTables.add(OrderedArrayTable.<Integer, Integer>newOrderedArrayTable());
         symbolTables.add(HashTable.<Integer, Integer>newHashTable());
+        symbolTables.add(BinarySearchTree.<Integer, Integer>newBinarySearchTree());
     }
 
     @Test

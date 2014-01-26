@@ -1,12 +1,14 @@
 package sedgewickwayne.lectures.sorting;
 
 import static sedgewickwayne.lectures.sorting.SortingUtils.exchange;
+import static sedgewickwayne.lectures.sorting.SortingUtils.isSorted;
 import static sedgewickwayne.lectures.sorting.SortingUtils.less;
 
 public class InsertionSort {
 
     public static void sort(Comparable[] a) {
         sort(a, 0, a.length-1);
+        assert isSorted(a);
     }
 
     public static void sort(Comparable[] a, int lo, int hi) {

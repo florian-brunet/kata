@@ -9,6 +9,7 @@ public class QuickSort {
     public static void sort(Comparable[] a) {
         shuffle(a);
         sort(a, 0, a.length - 1);
+        assert isSorted(a);
     }
 
     private static void sort(Comparable[] a, int left, int right) {

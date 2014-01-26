@@ -1,6 +1,7 @@
 package sedgewickwayne.lectures.sorting;
 
 import static sedgewickwayne.lectures.sorting.SortingUtils.exchange;
+import static sedgewickwayne.lectures.sorting.SortingUtils.isSorted;
 import static sedgewickwayne.lectures.sorting.SortingUtils.less;
 
 public class HeapSort {
@@ -14,6 +15,7 @@ public class HeapSort {
             exchange(a, 0, N-1);
             sink(a, 1, --N);
         }
+        assert isSorted(a);
     }
 
     private static void sink(Comparable[] a, int k, int N) {

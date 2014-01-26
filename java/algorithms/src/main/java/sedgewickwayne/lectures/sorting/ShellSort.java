@@ -1,6 +1,7 @@
 package sedgewickwayne.lectures.sorting;
 
 import static sedgewickwayne.lectures.sorting.SortingUtils.exchange;
+import static sedgewickwayne.lectures.sorting.SortingUtils.isSorted;
 import static sedgewickwayne.lectures.sorting.SortingUtils.less;
 
 public class ShellSort {
@@ -16,6 +17,7 @@ public class ShellSort {
             }
             h = h/3;
         }
+        assert isSorted(a);
     }
 
 

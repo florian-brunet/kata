@@ -1,5 +1,6 @@
 package sedgewickwayne.lectures.sorting;
 
+import static sedgewickwayne.lectures.sorting.SortingUtils.isSorted;
 import static sedgewickwayne.lectures.sorting.SortingUtils.less;
 import static sedgewickwayne.lectures.sorting.SortingUtils.merge;
 
@@ -8,6 +9,7 @@ public class MergeSort {
     public static void sort(Comparable[] a) {
         Comparable[] aux = new Comparable[a.length];
         sort(a, aux, 0, a.length - 1);
+        assert isSorted(a);
     }
 
     private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
